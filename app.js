@@ -49,8 +49,8 @@ class TodoStorage {
 document.addEventListener('DOMContentLoaded', TodoListCore.displayTodos());
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const time = document.getElementById('time').value;
+    name = document.getElementById('name').value;
+    time = document.getElementById('time').value;
     if(!name || !time) {
         document.querySelector('.alert-fill').style.display = 'flex';
     } else {
@@ -58,8 +58,8 @@ document.querySelector('form').addEventListener('submit', (e) => {
         const todo = new Todo(name, time);
         TodoListCore.addTodo(todo);
         TodoStorage.addTodo(todo);
-        name.value = '';
-        time.value = '';
+        document.querySelector('#name').value = '';
+        document.querySelector('#time').value = '';
     }
 });
 const alertButtons = document.querySelectorAll('.alert button');
@@ -69,9 +69,9 @@ alertButtons.forEach(index => {
     });
 });
 document.getElementById('todo-list').addEventListener('click', (e) => {
-    TodoListCore.deleteTodo(e.target);
-    if(e.target.parentElement.previousElementSibling.previousElementSibling.textContent !== null) {
+    if(e.target.className === 'delete') {
+        TodoListCore.deleteTodo(e.target);
         TodoStorage.removeTodo(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+        document.querySelector('.alert-delete').style.display = 'flex';
     }
-    document.querySelector('.alert-delete').style.display = 'flex';
 });
