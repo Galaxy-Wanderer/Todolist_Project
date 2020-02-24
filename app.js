@@ -70,6 +70,8 @@ alertButtons.forEach(index => {
 });
 document.getElementById('todo-list').addEventListener('click', (e) => {
     TodoListCore.deleteTodo(e.target);
-    TodoStorage.removeTodo(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+    if(e.target.parentElement.previousElementSibling.previousElementSibling.textContent !== null) {
+        TodoStorage.removeTodo(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+    }
     document.querySelector('.alert-delete').style.display = 'flex';
 });
