@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans|Roboto+Slab&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab';
+}
+body {
+    background: #242730;
+}
+h1 {
+    color: #01ff85;
+    font-family: 'Odibee Sans';
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 50px;
+}
+.alert {
+    border: 2px solid #01ff85;
+    color: #01ff85;
+    width: 100%;
+    margin: 15px auto 15px auto;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.alert button {
+    background: none;
+    border: none;
+    color: #01ff85;
+    font-size: 25px;
+}
+main {
+    box-shadow: 0px 0px 15px #01ff85;
+    width: 75%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+form {
+    line-height: 5rem;
+}
+input {
+    color: white;
+    width: 100%;
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #01ff85;
+    font-size: 25px;
+}
+form button {
+    width: 100%;
+    background: #01ff85;
+    border: none;
+    color: #242730;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 3px 0 3px 0;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+table {
+    color: #01ff85;
+    line-height: 50px;
+    width: 100%;
+}
+.table-head {
+    text-align: left;
+}
+table button {
+    background: none;
+    border: 1px solid #01ff85;
+    color: #01ff85;
+    font-size: 10px;
+    padding: 5px 7px 5px 7px;
+}
+.alert {
+    display: none;
+}
+@media screen and (max-width: 1200px) {
+    main {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 500px) {
+    input {
+        font-size: 20px;
+    }
+    table {
+        line-height: 35px;
+    }
+    #todo-list {
+        font-size: 10px;
+    }
+}

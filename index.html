@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>Javascript Todolist</title>
+    </head>
+    <body>
+        <main>
+            <h1>Javascript Todolist</h1>
+            <div class="alert alert-added">
+                <p>Todo added</p>
+                <button>&times;</button>
+            </div>
+            <div class="alert alert-fill">
+                <p>Please fill in all the fields</p>
+                <button>&times;</button>
+            </div>
+            <div class="alert alert-delete">
+                <p>Todo deleted</p>
+                <button>&times;</button>
+            </div>
+            <form>
+                <input type="text" id="name" name="name" placeholder="Todo name..." autocomplete="off">
+                <input type="text" id="time" name="time" placeholder="Todo time..." autocomplete="off">
+                <button type="submit">Add Todo</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="table-head">Name</th>
+                        <th class="table-head">Time</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="todo-list">
+                    
+                </tbody>
+            </table>
+        </main>
+        <script src="./app.js"></script>
+    </body>
+</html>
