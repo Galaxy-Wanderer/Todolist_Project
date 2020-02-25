@@ -1,9 +1,12 @@
+// Todo structure
 class Todo {
     constructor(name, time) {
         this.name = name;
         this.time = time;
     }
 }
+
+// Main UI
 class TodoListCore {
     static displayTodos() {
         const todos = TodoStorage.getTodos();
@@ -25,6 +28,8 @@ class TodoListCore {
         }
     }
 }
+
+// Todo storage
 class TodoStorage {
     static getTodos() {
         let todos;
@@ -50,7 +55,10 @@ class TodoStorage {
         localStorage.setItem('todoItems', JSON.stringify(todos));
     }
 }
+// Load todos
 document.addEventListener('DOMContentLoaded', TodoListCore.displayTodos());
+
+// When the user submits the form
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
     name = document.getElementById('name').value;
@@ -69,12 +77,16 @@ document.querySelector('form').addEventListener('submit', (e) => {
         document.querySelector('#time').value = '';
     }
 });
+
+// Makes the buttons to close alerts
 const alertButtons = document.querySelectorAll('.alert button');
 alertButtons.forEach(index => {
     index.addEventListener('click', (e) => {
         e.target.parentElement.style.display = 'none';
     });
 });
+
+// Checks when the user clicks the delete button
 document.getElementById('todo-list').addEventListener('click', (e) => {
     if(e.target.className === 'delete') {
         TodoListCore.deleteTodo(e.target);
@@ -82,3 +94,4 @@ document.getElementById('todo-list').addEventListener('click', (e) => {
         document.querySelector('.alert-delete').style.display = 'flex';
     }
 });
+
