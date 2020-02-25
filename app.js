@@ -57,7 +57,10 @@ document.querySelector('form').addEventListener('submit', (e) => {
     time = document.getElementById('time').value;
     if(!name || !time) {
         document.querySelector('.alert-fill').style.display = 'flex';
-    } else {
+    }
+    if(name.length > 20) {
+        document.querySelector('.alert-letters').style.display = 'flex';
+    } else if(name && time) {
         document.querySelector('.alert-added').style.display = 'flex';
         const todo = new Todo(name, time);
         TodoListCore.addTodo(todo);
