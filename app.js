@@ -28,17 +28,17 @@ class TodoListCore {
 class TodoStorage {
     static getTodos() {
         let todos;
-        if(localStorage.getItem('todos') === null) {
+        if(localStorage.getItem('todoItems') === null) {
             todos = [];
         } else {
-            todos = JSON.parse(localStorage.getItem('todos'));
+            todos = JSON.parse(localStorage.getItem('todoItems'));
         }
         return todos;
     }
     static addTodo(todo) {
         const todos = TodoStorage.getTodos();
         todos.push(todo);
-        localStorage.setItem('todos', JSON.stringify(todos));
+        localStorage.setItem('todoItems', JSON.stringify(todos));
     }
     static removeTodo(name) {
         const todos = TodoStorage.getTodos();
@@ -47,7 +47,7 @@ class TodoStorage {
                 todos.splice(index, 1);
             }
         });
-        localStorage.setItem('todos', JSON.stringify(todos));
+        localStorage.setItem('todoItems', JSON.stringify(todos));
     }
 }
 document.addEventListener('DOMContentLoaded', TodoListCore.displayTodos());
