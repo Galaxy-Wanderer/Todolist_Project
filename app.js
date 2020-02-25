@@ -19,7 +19,7 @@ class TodoListCore {
     static addTodo(todo) {
         const list = document.getElementById('todo-list');
         const row = document.createElement('tr');
-        row.innerHTML = `<td>${todo.name}</td><td>${todo.time}</td><td><button class="delete">X</button></td>`;
+        row.innerHTML = `<td>${todo.name}</td><td>${todo.time}</td><td><button class="delete">&times;</button></td>`;
         list.appendChild(row);
     }
     static deleteTodo(el) {
