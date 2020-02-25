@@ -7,7 +7,11 @@ class Todo {
 class TodoListCore {
     static displayTodos() {
         const todos = TodoStorage.getTodos();
-        todos.forEach(todo => TodoListCore.addTodo(todo));
+        todos.forEach(todo => { 
+            if(todo.name !== 'undefined') {
+                TodoListCore.addTodo(todo);
+            }
+        });
     }
     static addTodo(todo) {
         const list = document.getElementById('todo-list');
